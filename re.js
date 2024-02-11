@@ -15,14 +15,14 @@ function validateCreditCardNumber(cardNumber) {
     cardNumber = cardNumber.replace(/\D/g, '');
 
     if (!/^\d{13,19}$/.test(cardNumber)) {
-        return { isValid: false, cardType: 'Unknown' };
+        return { isValid: false, cardType: 'Unknown' }
     }
 
     const cardRegex = {
         visa: /^4/,
         mastercard: /^5[1-5]/,
         amex: /^3[47]/
-    };
+    }
 
     let cardType;
     for (const type in cardRegex) {
@@ -48,7 +48,7 @@ function validateCreditCardNumber(cardNumber) {
 
     const isValid = sum % 10 === 0;
 
-    return { isValid, cardType: cardType || 'Unknown' };
+    return { isValid, cardType: cardType || 'Unknown' }
 }
 
 // Call the function to start validation
